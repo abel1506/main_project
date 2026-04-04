@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block section %}
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+
+        <div class="row">
+
+            <!-- Course Image -->
+            <div class="col-lg-6 mb-4">
+                <div class="card shadow-sm">
+                    <img src="{{ course.image.url }}" class="card-img-top"
+                         style="height:350px; object-fit:cover;">
+                </div>
+            </div>
+
+            <!-- Course Details -->
+            <div class="col-lg-6">
+
+                <div class="card shadow-sm p-4 h-100">
+
+                    <h2 class="mb-3">{{ course.title }}</h2>
+
+                    <p class="text-muted">
+                        Instructor: <strong>{{ course.instructor }}</strong>
+                    </p>
+
+                    <p>
+                        {{ course.description }}
+                    </p>
+
+                    <hr>
+
+                    <h4 class="text-success">₹ {{ course.price }}</h4>
+                    <p class="text-warning">
+                        ⭐⭐⭐⭐☆ (4.5 Rating)
+                    </p>
+
+                    <p>
+                        <strong>Duration:</strong> {{ course.duration }}
+                    </p>
+
+                    <div class="mt-4">
+
+                        <a href="{% url 'payment' course.id %}" class="btn btn-success mr-2">
+                            Buy Now
+                        </a>
+
+                        <a href="{% url 'courses' %}" class="btn btn-outline-primary">
+                            Back to Courses
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block section %}
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+
+        <!-- Section Title -->
+        <div class="text-center mb-5">
+            <h6 class="text-secondary text-uppercase">Our Courses</h6>
+            <h1 class="display-4">Explore Popular Courses</h1>
+        </div>
+
+        <div class="row">
+
+            {% for course in courses %}
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+
+                    <!-- Course Image -->
+                    <img class="card-img-top"
+                         src="{{ course.image.url }}"
+                         alt="{{ course.title }}"
+                         style="height:200px; object-fit:cover;">
+
+                    <div class="card-body">
+
+                        <!-- Title -->
+                        <h5 class="card-title">{{ course.title }}</h5>
+
+                        <!-- Instructor -->
+                        <p class="text-muted">
+                            Instructor: {{ course.instructor }}
+                        </p>
+
+                        <!-- Description -->
+                        <p>
+                            {{ course.description|truncatewords:15 }}
+                        </p>
+
+                        <!-- Price & Duration -->
+                        <p>
+                            <strong>₹ {{ course.price }}</strong> | {{ course.duration }}
+                        </p>
+
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="card-footer bg-white text-center">
+
+                        <a href="{% url 'course-detail' course.id %}" class="btn btn-primary btn-sm">
+                            View Details
+                        </a>
+
+                        <a href="{% url 'payment' course.id %}" class="btn btn-success btn-sm">
+                            Buy Now
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+            {% empty %}
+
+            <div class="col-12 text-center">
+                <h5>No courses available</h5>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
