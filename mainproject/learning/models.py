@@ -24,6 +24,10 @@ class Course(models.Model):
     description = models.TextField()
     price = models.IntegerField()
     duration = models.CharField(max_length=50)
-    image = models.ImageField(upload_to="courses/")
+    image = models.ImageField(upload_to='courses/')
+    youtube_link = models.URLField()
+
+    def __str__(self):
+        return self.title
 
     

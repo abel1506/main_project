@@ -20,7 +20,7 @@ class AboutView(View):
 
 class CourseListView(View):
     def get(self, request, *args, **kwargs):
-        courses = Course.objects.all()
+        course = Course.objects.all()
         return render(request, "learning/course_list.html")
 
 class ContactView(View):
