@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'learning',
     'django.contrib.auth',
     'authentication',
+    
 ]
 
 
