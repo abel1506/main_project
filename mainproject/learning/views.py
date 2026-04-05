@@ -54,3 +54,8 @@ class ContactView(View):
         return render(request, self.template)
     
 
+class PaymentView(View):
+    def get(self, request, pk, *args, **kwargs):
+        course = get_object_or_404(Course, pk=pk)
+        return render(request, "learning/payment.html", {"course": course})
+
