@@ -16,7 +16,7 @@ class SignUpForm(forms.ModelForm):
         
         model=Profile
 
-        fields=['first_name','last_name','email','password',]
+        fields=['first_name','last_name','email','password']
 
         widgets={
             'first_name':forms.TextInput(attrs={'class':'form-control'}),

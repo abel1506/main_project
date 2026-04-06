@@ -7,9 +7,11 @@ urlpatterns = [
     path("contact/", ContactView.as_view(), name="contact"),
     path('courses/', CourseListView.as_view(), name='courses'),
     
-    # ✅ FIXED name
+   
     path('courses/<int:pk>/', CourseDetailView.as_view(), name='course-detail'),
     
-    # ✅ FIXED import (no views.)
+ 
     path('payment/<int:pk>/', PaymentView.as_view(), name='payment'),
+
+    
 ]
