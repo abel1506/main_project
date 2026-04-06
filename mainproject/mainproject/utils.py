@@ -58,6 +58,6 @@ def send_email(recipient,template,subject,context):
 
 
 def delete_otp_obj(user):
-    from .models import OTP  # adjust if needed
+    from learning.models import OTP  # adjust if needed
 
     OTP.objects.filter(user=user).delete()
