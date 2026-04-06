@@ -105,7 +105,7 @@ class SignUpView(View):
 
             password=generate_password()
 
-            user.password=make_password(password)
+            user.password =make_password(password)
 
             user.role='User'
 

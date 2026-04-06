@@ -16,13 +16,13 @@ class SignUpForm(forms.ModelForm):
         
         model=Profile
 
-        fields=['first_name','last_name','email']
+        fields=['first_name','last_name','email','password',]
 
         widgets={
             'first_name':forms.TextInput(attrs={'class':'form-control'}),
             'last_name':forms.TextInput(attrs={'class':'form-control'}),
             'email':forms.EmailInput(attrs={'class':'form-control'}),
-
+            'password':forms.PasswordInput(attrs={'class':'form-control'}),
         }
 
     def clean(self):
